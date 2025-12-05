@@ -14,25 +14,16 @@ AguacAIte-Labs/
 ├──READ.md ---Links for used for the datasets
 │
 ├── models/ # Trained model weights
-│ ├── 
 │
 ├── notebooks/ # Jupyter notebooks for experimentation
-│ ├── 
-│ ├──
 │
 ├── results/ 
-│ ├── 
 |
 ├── src/ # Production-ready Python code
 │ ├── data/
-│ │ ├──
 │ ├── evaluation/
-│ │ └── 
 │ ├── models/
-│ │ ├──
 │ ├── training/
-│ │ └── 
 │ └── visualization/
-│ └──
 │
 └── README.md
