@@ -9,9 +9,9 @@ The project compares classical ML baselines with modern convolutional neural net
 ```
 📁 AguacAIte-Labs
  ├── 📂 data
+ |    ├── 📂 notebook
  │    ├── 📁 raw
  │    └── 📁 processed
- ├── 📂 notebooks
  ├── 📂 src
  │    ├── 📁 data
  │    ├── 📁 models
