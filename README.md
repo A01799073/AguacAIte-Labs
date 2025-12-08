@@ -4,6 +4,10 @@ AguacAIte is an AI-powered diagnostic tool designed to detect early signs of tub
 Algoritms models
 K-Nearest Neighbors (KNN)
 HOG + SVM
+## Pipeline Overview
+`DATASET → CLEANING → PREPROCESSING → FEATURE EXTRACTION → BASELINE CLASSIFIERS → CNN → TRANSFER LEARNING → METRICS → GRADCAM → REPORT`
+
+
 
 ## Project Structure
 AguacAIte-Labs/
