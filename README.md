@@ -1,38 +1,54 @@
-## AguacAIte-Labs
-AguacAIte is an AI-powered diagnostic tool designed to detect early signs of tuberculosis in chest X-rays. Using deep learning and advanced image recognition, it differentiates healthy lungs from TB-affected ones with high accuracy and interpretable visual outputs.
+# 🥑 AguacAIte-Labs
 
-Algoritms models
-K-Nearest Neighbors (KNN)
-HOG + SVM
+AguacAIte is a machine learning and deep learning framework for detecting tuberculosis in chest X-ray images.  
+The project compares classical ML baselines with modern convolutional neural networks and transfer learning architectures, providing both quantitative metrics and visual interpretability through Grad-CAM.
+
+---
 
 ## Project Structure
-AguacAIte-Labs/
-│
-├── data/
-│ ├── processed/ # Cleaned,normalized, and resized images
-│ ├── raw/ # Original datasets
-├──READ.md ---Links for used for the datasets
-│
-├── models/ # Trained model weights
-│ ├── 
-│
-├── notebooks/ # Jupyter notebooks for experimentation
-│ ├── 
-│ ├──
-│
-├── results/ 
-│ ├── 
-|
-├── src/ # Production-ready Python code
-│ ├── data/
-│ │ ├──
-│ ├── evaluation/
-│ │ └── 
-│ ├── models/
-│ │ ├──
-│ ├── training/
-│ │ └── 
-│ └── visualization/
-│ └──
-│
-└── README.md
+```
+📁 AguacAIte-Labs
+ ├── 📂 data
+ │    ├── 📁 raw
+ │    └── 📁 processed
+ ├── 📂 notebooks
+ ├── 📂 src
+ │    ├── 📁 data
+ │    ├── 📁 models
+ │    ├── 📁 training
+ │    ├── 📁 evaluation
+ │    └── 📁 visualization
+ ├── 📂 models
+ ├── 📂 results
+ └── 📄 README.md
+```
+----
+
+---
+## Pipeline Overview
+`DATASET → CLEANING → PREPROCESSING → FEATURE EXTRACTION → BASELINE CLASSIFIERS → CNN → TRANSFER LEARNING → METRICS → GRADCAM → REPORT`
+
+## Models Implemented
+
+### Classical ML Baselines
+- K-Nearest Neighbors (KNN)
+- Decision Tree
+- HOG + SVM
+
+### Deep Learning
+- Custom CNN
+- DenseNet121 (Transfer Learning)
+- ResNet50 (Transfer Learning)
+- EfficientNet-B0 (Transfer Learning)
+
+---
+
+## Datasets
+- Shenzhen Hospital Chest X-ray Set (TB vs Normal)
+
+---
+
+## Goal
+A clean, reproducible pipeline for TB detection using classic ML and modern deep learning.
+
+---
