@@ -25,6 +25,8 @@ The project compares classical ML baselines with modern convolutional neural net
 ----
 
 ---
+## Pipeline Overview
+`DATASET → CLEANING → PREPROCESSING → FEATURE EXTRACTION → BASELINE CLASSIFIERS → CNN → TRANSFER LEARNING → METRICS → GRADCAM → REPORT`
 
 ## Models Implemented
 
