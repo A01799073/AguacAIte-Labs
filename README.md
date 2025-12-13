@@ -1,5 +1,4 @@
 # 🥑 AguacAIte-Labs
-
 AguacAIte is a machine learning and deep learning framework designed to detect Tuberculosis (TB) form chest X-ray images.
 
 The project follorws a full medical-AI pipeline-from dataset exploration and cleaning, to prepocessing, classical ML baselines, CNNs, tranfer learning modesl, evaluation metrics, interpretability using Grad-CAM, and final reporting.
