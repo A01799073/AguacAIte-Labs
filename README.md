@@ -77,3 +77,15 @@ Demonstrate interpretability for medical safety
 
 Serve as a reproducible academic and scientific framework
 ---
+
+## Requirements
+This project was development using Python 3.12
+
+Main dependencies:
+- numpy
+- opencv-python
+- matplotlib
+- scikit-learn
+- torch
+- torchvision
+- jupyter
