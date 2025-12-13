@@ -1,17 +1,29 @@
 # 🥑 AguacAIte-Labs
 
-AguacAIte is a machine learning and deep learning framework for detecting tuberculosis in chest X-ray images.  
-The project compares classical ML baselines with modern convolutional neural networks and transfer learning architectures, providing both quantitative metrics and visual interpretability through Grad-CAM.
+AguacAIte is a machine learning and deep learning framework designed to detect Tuberculosis (TB) form chest X-ray images.
 
+The project follorws a full medical-AI pipeline-from dataset exploration and cleaning, to prepocessing, classical ML baselines, CNNs, tranfer learning modesl, evaluation metrics, interpretability using Grad-CAM, and final reporting.
+
+---
+## Technologies Used
+ - Python
+ - PyTorch
+ - scikit-learn
+ - OpenCV
+ - NumPy / Matplotlib
+ - Grad-CAM
+ 
 ---
 
 ## Project Structure
 ```
 📁 AguacAIte-Labs
  ├── 📂 data
- |    ├── 📂 notebook
  │    ├── 📁 raw
+ │    │     ├── 📁 normal/
+ │    │     └── 📁 tuberculosis/
  │    └── 📁 processed
+ ├── 📂 notebooks
  ├── 📂 src
  │    ├── 📁 data
  │    ├── 📁 models
@@ -31,15 +43,15 @@ The project compares classical ML baselines with modern convolutional neural net
 ## Models Implemented
 
 ### Classical ML Baselines
-- K-Nearest Neighbors (KNN)
-- Decision Tree
-- HOG + SVM
+- K-Nearest Neighbors (KNN) - Simple distance-based classifier using HOG features
+- Decision Tree -  Basic interpretable model for comparison
+- HOG + SVM - Strong baseline using handcrafted features
 
 ### Deep Learning
-- Custom CNN
-- DenseNet121 (Transfer Learning)
-- ResNet50 (Transfer Learning)
-- EfficientNet-B0 (Transfer Learning)
+- Custom CNN - Lightweight convolutional architectural build form scratch
+- DenseNet121 (Transfer Learning) - Hight accuracu & best performance for medical images.
+- ResNet50 (Transfer Learning) -  Strong, stable architecure
+- EfficientNet-B0 (Transfer Learning) - Balanced accurancy vs efficiency.
 
 ---
 
@@ -48,7 +60,21 @@ The project compares classical ML baselines with modern convolutional neural net
 
 ---
 
-## Goal
-A clean, reproducible pipeline for TB detection using classic ML and modern deep learning.
+## Outputs
+- Confusion matrix
+- Classification metrics
+- ROC curve
+- Model weights
+- Training curves
+- Grad-CAM lung heatmaps
+---
 
+## Goal
+Provide a full end-to-end AI pipeline for chest X-ray TB detection
+
+Compare classical ML vs CNN vs transfer learning
+
+Demonstrate interpretability for medical safety
+
+Serve as a reproducible academic and scientific framework
 ---
