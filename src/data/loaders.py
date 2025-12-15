@@ -21,14 +21,14 @@ def build_dataloaders(data_dir, batch_size = 15, val_split = 0.2):
         train_ds,
         batch_size = batch_size,
         shuffle = True, # Improve generalization
-        num_workers = 2
+        num_workers = 0
     )
 
     val_loader = DataLoader(
         val_ds,
         batch_size = batch_size,
         shuffle = False,
-        num_workers = 2
+        num_workers = 0
     )
 
     return train_loader,val_loader

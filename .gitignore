@@ -14,8 +14,13 @@ venv/
 .DS_Store
 Thumbs.db
 
+# Trained models & artifacts
+models/*.pth
+models/*.pkl
+
 # VSCode
 .vscode/
 
 # Logs
 *.log
+
