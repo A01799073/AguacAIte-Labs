@@ -9,12 +9,19 @@ def build_efficientnet_b0(pretrained: bool = True, freeze_backbone: bool = True)
 
     model = models.efficientnet_b0(pretrained=pretrained)
 
-    # DenseNet expect 3-channel input
-    model.features[0][0] = nn.Conv2d(in_channels = 1, out_channels = 32, kernel_size = 3, stride = 2, padding = 1, bias = False)
-
+    # EfficientNet first conv is usually features[0][0]
+    first_conv = model.features[0][0]
+    model.features[0][0] = nn.Conv2d(
+        in_channels=1,
+        out_channels=first_conv.out_channels,
+        kernel_size=first_conv.kernel_size,
+        stride=first_conv.stride,
+        padding=first_conv.padding,
+        bias=False
+    )
     # Replace classfier (binary outputs)
-    num_features = model.classifier[1].in_features
-    model.classifier[1] = nn.Linear(num_features,1)
+    in_features = model.classifier[1].in_features
+    model.classifier[1] = nn.Linear(in_features, 1)
 
     # Freeze feature extractor
     if freeze_backbone:

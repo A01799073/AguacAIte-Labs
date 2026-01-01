@@ -2,15 +2,15 @@ import torch
 import torch.nn as nn
 from torchvision import models
 
-def build_densenet121(pretrained: bool = True, freeze_backbone: bool = True):
+def build_resnet50(pretrained: bool = True, freeze_backbone: bool = True):
     """
     Configure Restnet50 for binary classification (Normal vs Tuberculosis
     """
 
     model = models.resnet50(pretrained=pretrained)
 
-    # DenseNet expect 3-channel input
-    model.features.conv1 = nn.Conv2d(in_channels = 1, out_channels = 64, kernel_size = 7, stride = 2, padding = 3, bias = False)
+    # ResNet uses conv1 directly
+    model.conv1 = nn.Conv2d(in_channels = 1, out_channels = 64, kernel_size = 7, stride = 2, padding = 3, bias = False)
 
     # Replace classfier (binary outputs)
     num_features = model.fc.in_features
