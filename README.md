@@ -18,19 +18,30 @@ The project follorws a full medical-AI pipeline-from dataset exploration and cle
 ```
 📁 AguacAIte-Labs
  ├── 📂 data
+ │    ├── 📁 notebooks
+ │    │     └── 📁 results 
+ │    │          ├── 📁 exploration 
+ │    │          ├── 📁 preprocessing
+ │    ├── 📁 processed
+ │    │     ├── 📁 normal/
+ │    │     └── 📁 tuberculosis/
+ │    ├── 📁 notebooks  
  │    ├── 📁 raw
  │    │     ├── 📁 normal/
  │    │     └── 📁 tuberculosis/
- │    └── 📁 processed
- ├── 📂 notebooks
+ │    ├── 📁 results
+ │    │          └── 📁 training  
+ │    └── 📄 READ.md
+ ├── 📂 models
+ │    └── 📁 transfer
  ├── 📂 src
  │    ├── 📁 data
+ │    ├── 📁 evaluation 
  │    ├── 📁 models
+ │    ├── 📁 scripts
  │    ├── 📁 training
- │    ├── 📁 evaluation
  │    └── 📁 visualization
- ├── 📂 models
- ├── 📂 results
+ ├── 📄 .gitgnore
  └── 📄 README.md
 ```
 ----
