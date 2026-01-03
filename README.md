@@ -21,16 +21,16 @@ The project follorws a full medical-AI pipeline-from dataset exploration and cle
  │    ├── 📁 notebooks
  │    │     └── 📁 results 
  │    │          ├── 📁 exploration 
+ │    │          ├── 📁 feature_extraction
  │    │          ├── 📁 preprocessing
+ │    │          └── 📁 training   
  │    ├── 📁 processed
- │    │     ├── 📁 normal/
- │    │     └── 📁 tuberculosis/
+ │    │     ├── 📁 normal
+ │    │     └── 📁 tuberculosis
  │    ├── 📁 notebooks  
  │    ├── 📁 raw
- │    │     ├── 📁 normal/
- │    │     └── 📁 tuberculosis/
- │    ├── 📁 results
- │    │          └── 📁 training  
+ │    │     ├── 📁 normal
+ │    │     └── 📁 tuberculosis
  │    └── 📄 READ.md
  ├── 📂 models
  │    └── 📁 transfer
