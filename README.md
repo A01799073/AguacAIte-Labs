@@ -36,7 +36,8 @@ The project follorws a full medical-AI pipeline-from dataset exploration and cle
  │    └── 📁 transfer
  ├── 📂 src
  │    ├── 📁 data
- │    ├── 📁 evaluation 
+ │    ├── 📁 evaluation
+ │    ├── 📁 features 
  │    ├── 📁 models
  │    ├── 📁 scripts
  │    ├── 📁 training
