@@ -1,0 +1,4 @@
+Model,Accuracy,Precision,Recall
+KNN (k=1),0.8333333333333334,,
+Decision Tree,1.0,1.0,1.0
+SVM,1.0,1.0,1.0
