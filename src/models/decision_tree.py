@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score
 
 
 def train_decision_tree(X_train, y_train, max_depth=None, random_state=42):
@@ -17,5 +17,7 @@ def evaluate_decision_tree(model, X_test, y_test):
 
     return {
         "accuracy": accuracy_score(y_test, y_pred),
+        "precision": precision_score(y_test, y_pred, zero_division=0),
+        "recall": recall_score(y_test, y_pred, zero_division=0),
         "confusion_matrix": confusion_matrix(y_test, y_pred)
     }

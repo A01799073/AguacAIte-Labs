@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score
 
 
 def train_svm(X_train, y_train, C=1.0, kernel="rbf"):
@@ -18,5 +18,7 @@ def evaluate_svm(model, X_test, y_test):
 
     return {
         "accuracy": accuracy_score(y_test, y_pred),
+        "precision": precision_score(y_test, y_pred, zero_division=0),
+        "recall": recall_score(y_test, y_pred, zero_division=0),
         "confusion_matrix": confusion_matrix(y_test, y_pred)
     }
