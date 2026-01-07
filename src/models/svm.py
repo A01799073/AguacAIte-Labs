@@ -1,0 +1,33 @@
+import numpy as np
+
+from sklearn.svm import SVC
+from sklearn.metrics import (accuracy_score, confusion_matrix, precision_score, recall_score)
+
+
+def train_svm(X_train, y_train, C = 1.0, kernel = "rbf", gamma = "scale"):
+    """
+    Train a Support Vector Machine (SVM) classifier.
+    """
+
+    model = SVC(
+        C = C,
+        kernel = kernel,
+        gamma = gamma,
+        probability = False
+    )
+    model.fit(X_train, y_train)
+    return model
+
+
+def evaluate_svm(model, X_test, y_test):
+    """
+    Evaluate a trained SVM classifier
+    """
+    y_pred = model.predict(X_test)
+
+    return {
+        "accuracy": accuracy_score(y_test, y_pred),
+        "precision": precision_score(y_test, y_pred, zero_division=0),
+        "recall": recall_score(y_test, y_pred, zero_division=0),
+        "confusion_matrix": confusion_matrix(y_test, y_pred)
+    }

@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Trained models & artifacts
+models/*.pth
+models/*.pkl
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
