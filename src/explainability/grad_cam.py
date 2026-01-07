@@ -4,8 +4,9 @@ import torch.nn.functional as F
 
 class GradCAM:
     """
-    Minimal Grad-CAM implementation.
-    Works with any CNN-based model.
+    Minimal Grad-CAM implementation for CNN- based models
+
+    -  Computes class-discriminative localization maps.
     """
 
     def __init__(self, model, target_layer):
@@ -15,6 +16,7 @@ class GradCAM:
         self.activations = None
         self.gradients = None
 
+        self.model.eval()
         self._register_hooks()
 
     def _register_hooks(self):
@@ -27,9 +29,12 @@ class GradCAM:
         self.target_layer.register_forward_hook(forward_hook)
         self.target_layer.register_full_backward_hook(backward_hook)
 
-    def generate(self, input_tensor, class_idx=None):
+    def generate(self, input_tensor, class_idx = None):
         """
         Generate Grad-CAM heatmap for a single image.
+
+        - input_tesnsor :  Input image tensor of chape (1, C, H,W)
+        - class_idx : Target class index. If "None", uses the predicted class
         """
 
         self.model.zero_grad()
@@ -41,11 +46,13 @@ class GradCAM:
         score = output[:, class_idx]
         score.backward()
 
-        weights = self.gradients.mean(dim=(2, 3), keepdim=True)
+        # Global average pooling of gradients
+        weights = self.gradients.mean(dim = (2, 3), keepdim = True)
 
-        cam = (weights * self.activations).sum(dim=1)
+        cam = (weights * self.activations).sum(dim = 1)
         cam = F.relu(cam)
 
+        # Normalization
         cam = cam - cam.min()
         cam = cam / (cam.max() + 1e-8)
 

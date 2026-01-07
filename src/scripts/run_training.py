@@ -1,7 +1,7 @@
 import torch
 import pickle
-import sys
 from pathlib import Path
+
 from src.models.cnn import SimpleCNN
 from src.data.loaders import build_dataloaders
 from src.training.train import train_model
@@ -13,11 +13,11 @@ train_loader, val_loader = build_dataloaders("data/processed")
 model = SimpleCNN().to(device)
 
 history = train_model(
-    model=model,
-    train_loader=train_loader,
-    val_loader=val_loader,
-    device=device,
-    epochs=10
+    model = model,
+    train_loader = train_loader,
+    val_loader = val_loader,
+    device = device,
+    epochs = 10
 )
 
 # Save history for evaluation

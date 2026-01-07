@@ -1,7 +1,8 @@
-from pathlib import Path
-import torch
-from torch.utils.data import Dataset
 import cv2
+import torch
+
+from pathlib import Path
+from torch.utils.data import Dataset
 
 class ChestXrayDataSet(Dataset):
     """ 

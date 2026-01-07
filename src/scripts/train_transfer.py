@@ -1,5 +1,6 @@
 import torch
 import pickle
+
 from pathlib import Path
 
 from src.data.loaders import build_dataloaders
@@ -10,7 +11,7 @@ from src.models.densenet import build_densenet121
 from src.models.resnet import build_resnet50
 from src.models.efficientnet import build_efficientnet_b0
 
-
+# Configurations
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 DATA_DIR = "data/processed"
 OUT_DIR = Path("models/transfer")
@@ -29,15 +30,15 @@ def train_model_pipeline(name, model):
 
     model = model.to(DEVICE)
 
-    # ---- Phase A: head only ----
+    # ---- Phase A: train classification head only ----
     history_head = train_model(
-        model=model,
-        train_loader=train_loader,
-        val_loader=val_loader,
-        device=DEVICE,
-        epochs=EPOCHS_HEAD,
-        lr=LR_HEAD,
-        save_path=OUT_DIR / f"{name}_head.pth"
+        model = model,
+        train_loader = train_loader,
+        val_loader = val_loader,
+        device = DEVICE,
+        epochs = EPOCHS_HEAD,
+        lr = LR_HEAD,
+        save_path = OUT_DIR / f"{name}_head.pth"
     )
 
     # ---- Phase B: partial fine-tuning ----

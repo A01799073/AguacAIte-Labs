@@ -22,6 +22,7 @@ The project follorws a full medical-AI pipeline-from dataset exploration and cle
  │    │     └── 📁 results 
  │    │          ├── 📁 exploration 
  │    │          ├── 📁 feature_extraction
+ │    │          ├── 📁 gradcam
  │    │          ├── 📁 preprocessing
  │    │          └── 📁 training   
  │    ├── 📁 processed
@@ -36,12 +37,11 @@ The project follorws a full medical-AI pipeline-from dataset exploration and cle
  │    └── 📁 transfer
  ├── 📂 src
  │    ├── 📁 data
- │    ├── 📁 evaluation
+ │    ├── 📁 explainability
  │    ├── 📁 features 
  │    ├── 📁 models
  │    ├── 📁 scripts
- │    ├── 📁 training
- │    └── 📁 visualization
+ │    └── 📁 training
  ├── 📄 .gitgnore
  └── 📄 README.md
 ```

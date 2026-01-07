@@ -1,4 +1,3 @@
-# Libraries
 import cv2
 import numpy as np
 
@@ -10,7 +9,7 @@ def load_images(path: str) -> np.ndarray:
     return image
 
 # Spatial Standardization
-def resize_image(image, size=(244, 244))-> np.ndarray:
+def resize_image(image, size =(244, 244))-> np.ndarray:
     # Resize awhile preserving structure
     return cv2.resize(image,size, interpolation = cv2.INTER_AREA)
 
@@ -20,7 +19,7 @@ def normalize_image(image: np.ndarray)-> np.ndarray:
     return image
 
 # Contrast Enhacement (CLAHE)
-def apply_clahe(image : np.ndarray,clip_limit = 3.0, grid_size=(8,8)) -> np.ndarray:
+def apply_clahe(image : np.ndarray,clip_limit = 3.0, grid_size = (8,8)) -> np.ndarray:
     # Enhace image constrar using CLAHE, recommended for X-ray.
     clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize = grid_size)
     return clahe.apply(image)
@@ -32,7 +31,7 @@ def gamma_correction(image: np.ndarray, gamma: float = 0.8) -> np.ndarray:
     return (image * 255).astype("uint8")
 
 # Full Pipeline
-def preprocess_image(path : str, size=(244,244), use_clahe: bool=True, use_gamma: bool = True)-> np.ndarray:
+def preprocess_image(path : str, size = (244,244), use_clahe: bool = True, use_gamma: bool = True)-> np.ndarray:
     # Load -> resize -> (CLAHE) -> Gamma correction -> normalize
     image = load_images(path)
     image = resize_image(image,size)

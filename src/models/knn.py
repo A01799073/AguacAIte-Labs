@@ -1,15 +1,16 @@
 import numpy as np
+
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix
 
 
-def train_knn(X_train, y_train, k=5, metric="euclidean"):
+def train_knn(X_train, y_train, k=5, metric = "euclidean"):
     """
     Train a KNN classifier.
     """
     model = KNeighborsClassifier(
-        n_neighbors=k,
-        metric=metric
+        n_neighbors = k,
+        metric = metric
     )
     model.fit(X_train, y_train)
     return model

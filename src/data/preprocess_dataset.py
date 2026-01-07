@@ -1,5 +1,6 @@
 import os
 import cv2
+
 from pathlib import Path
 from typing import Tuple
 
@@ -41,7 +42,7 @@ def preprocess_dataset(raw_dir: Path = RAW_PATH, processed_dir: Path= PROCESSED_
             except Exception as e:
                 print(f"[ERROR] {img_name}: {e}")
 
-    print("✅ Dataset preprocessing completed")
+    print("Dataset preprocessing completed")
 
 
 if __name__ == "__main__":

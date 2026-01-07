@@ -27,6 +27,7 @@ def train_model(model,train_loader,val_loader, device,epochs = 10,lr = 1e-3,save
     }
 
     for epoch in range(epochs):
+        
         # Training phase
         model.train()
         running_loss = 0.0
