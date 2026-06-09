@@ -102,6 +102,9 @@ Main dependencies:
 - torchvision
 - jupyter
 
+  -------
+  Feature features
+
 ## Reproducibility
 
 Processed images, trained models, and result figures are not tracked.
